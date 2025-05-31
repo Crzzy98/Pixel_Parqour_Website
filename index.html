@@ -10,8 +10,8 @@
         /* Custom styles for the Inter font and general body styling */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Light background for the page */
-            color: #333; /* Default text color */
+            background-color: #000000; /* Black background for the page */
+            color: #90EE90; /* Light green text color */
         }
         /* Ensure the main content area has some padding */
         main {
@@ -20,16 +20,32 @@
         /* Specific styling for the banner text */
         .banner-text {
             font-weight: 700; /* Bold */
-            color: #10B981; /* Green color */
+            color: #90EE90; /* Light green color */
+        }
+        /* Override Tailwind classes for dark theme */
+        .bg-white {
+            background-color: #1a1a1a !important; /* Dark gray instead of white */
+        }
+        .bg-gray-50 {
+            background-color: #2a2a2a !important; /* Darker gray for sections */
+        }
+        .text-gray-800 {
+            color: #90EE90 !important; /* Light green for headings */
+        }
+        .text-gray-700 {
+            color: #90EE90 !important; /* Light green for body text */
+        }
+        .bg-gray-800 {
+            background-color: #0a0a0a !important; /* Very dark for footer */
+        }
+        .text-white {
+            color: #90EE90 !important; /* Light green for footer text */
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-    <header class="bg-white shadow-md p-4 flex items-center justify-between flex-wrap">
-    <div class="flex items-center">
-        <img src="images/pixel_logo.png" alt="Pixel Parkour Logo" class="rounded-lg mr-4 w-16 h-16 object-cover">
-        <h1 class="text-3xl sm:text-4xl banner-text">Pixel Parkour</h1>
-    </div>
+    <header class="bg-white shadow-md p-4 flex items-center justify-center flex-wrap">
+        <img src="images/pixel_logo.png" alt="Pixel Parkour Logo" class="h-36 sm:h-48 object-contain">
 </header>
 
     <main class="container mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow">
@@ -40,7 +56,6 @@
             </p>
         </section>
 
-        ---
 
         <section id="crafting-dreams" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 border-b-2 border-green-400 pb-2">Crafting Your Dreams</h2>
@@ -49,11 +64,15 @@
             </p>
 
             <div class="flex flex-col md:flex-row items-center justify-between mb-8 pb-4 border-b border-gray-200 last:border-b-0">
-                <div class="md:order-2 w-full md:w-1/2 flex justify-end mb-4 md:mb-0">
-                    <img src="https://placehold.co/300x200/4CAF50/FFFFFF?text=Web+Image" alt="Web Development" class="rounded-lg shadow-md max-w-full h-auto">
-                </div>
+
                 <div class="md:order-1 w-full md:w-1/2 md:pr-8">
                     <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">Web Solutions</h3>
+                    <div class="md:order-2 w-full md:w-1/2 flex flex-col justify-end mb-4 md:mb-0">
+                    <img src="images/stock_web.jpg" alt="Web Development" class="rounded-lg shadow-md max-w-full h-auto">
+                    <p class="text-xs text-gray-400 mt-1 text-right">
+                        Photo by <a href="https://www.vecteezy.com/photo/9276525-digital-communication-and-virtual-technology-concept-web-3-0-hand-touch-globe-internet-business-concept-metaverse" target="_blank" class="hover:text-green-400 transition-colors">Khunkorn Laowisit</a> on Vecteezy
+                    </p>
+                </div>
                     <p class="text-base leading-relaxed text-gray-700">
                         From dynamic e-commerce platforms to engaging corporate sites, we build responsive and high-performance web applications tailored to your business needs. We focus on modern frameworks and intuitive user interfaces to ensure a seamless experience across all devices.
                     </p>
@@ -61,11 +80,14 @@
             </div>
 
             <div class="flex flex-col md:flex-row items-center justify-between mb-8 pb-4 border-b border-gray-200 last:border-b-0">
-                <div class="md:order-1 w-full md:w-1/2 flex justify-start mb-4 md:mb-0">
-                    <img src="https://placehold.co/300x200/2196F3/FFFFFF?text=iOS+Image" alt="iOS App Development" class="rounded-lg shadow-md max-w-full h-auto">
-                </div>
                 <div class="md:order-2 w-full md:w-1/2 md:pl-8">
                     <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">iOS App Development</h3>
+                    <div class="md:order-1 w-full md:w-1/2 flex flex-col justify-start mb-4 md:mb-0">
+                    <img src="images/stock_iphone.jpg" alt="iOS App Development" class="rounded-lg shadow-md max-w-full h-auto">
+                    <p class="text-xs text-gray-400 mt-1 text-left">
+                        Photo by <a href="https://www.vecteezy.com/photo/46432460-iphone-12-pro-max-with-wireless-charging" target="_blank" class="hover:text-green-400 transition-colors">Omar Faruk Mukut</a> on Vecteezy
+                    </p>
+                </div>
                     <p class="text-base leading-relaxed text-gray-700">
                         Bring your ideas to life on Apple's ecosystem. We design and develop native iOS applications that are both aesthetically pleasing and functionally robust, ensuring a top-tier experience for iPhone and iPad users.
                     </p>
@@ -73,11 +95,14 @@
             </div>
 
             <div class="flex flex-col md:flex-row items-center justify-between mb-8 pb-4 last:border-b-0">
-                <div class="md:order-2 w-full md:w-1/2 flex justify-end mb-4 md:mb-0">
-                    <img src="https://placehold.co/300x200/FFC107/333333?text=Android+Image" alt="Android App Development" class="rounded-lg shadow-md max-w-full h-auto">
-                </div>
                 <div class="md:order-1 w-full md:w-1/2 md:pr-8">
                     <h3 class="text-xl sm:text-2xl font-semibold text-gray-800 mb-2">Android App Development</h3>
+                    <div class="md:order-2 w-full md:w-1/2 flex flex-col justify-end mb-4 md:mb-0">
+                    <img src="images/stock_android.jpg" alt="Android App Development" class="rounded-lg shadow-md max-w-full h-auto">
+                    <p class="text-xs text-gray-400 mt-1 text-right">
+                        Photo by <a href="https://www.vecteezy.com/photo/24715785-modern-office-desk-with-smart-phone-technology-generated-by-ai" target="_blank" class="hover:text-green-400 transition-colors">Andres Ramos</a> on Vecteezy
+                    </p>
+                </div>
                     <p class="text-base leading-relaxed text-gray-700">
                         Reach a broader audience with custom Android applications. Our team crafts intuitive and powerful apps that are optimized for performance across the vast Android device landscape, delivering a seamless user experience.
                     </p>
@@ -85,13 +110,37 @@
             </div>
         </section>
 
-        ---
-
         <section id="contact-us" class="p-6 bg-gray-50 rounded-lg shadow-sm">
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 border-b-2 border-green-400 pb-2">Get in Touch</h2>
-            <p class="text-lg leading-relaxed text-gray-700">
-                We'd love to hear from you! This section will provide details on how to get in contact and schedule a consultation to discuss your software needs. Content to be added later.
+            <p class="text-lg leading-relaxed text-gray-700 mb-4">
+                We'd love to hear from you! Reach out to discuss your software needs and schedule a consultation.
             </p>
+
+            <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
+                <p class="text-base text-blue-800 mb-2">
+                    <strong>How to Get Started:</strong>
+                </p>
+                <p class="text-base text-blue-800 mb-2">
+                    Please send us a short description of your project idea, and one of our consultants will be in contact with you within 5 business days to discuss your project and begin drafting a project plan.
+                </p>
+                <p class="text-base text-blue-800">
+                    We specialize in creating plans to fit any person or business's financial and digital needs.
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="flex items-center">
+                    <svg class="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <div>
+                        <p class="text-sm text-gray-600 font-medium">Email</p>
+                        <a href="mailto:pixelparqour@gmail.com" class="text-lg text-gray-700 hover:text-green-400 transition-colors">
+                            pixelparqour@gmail.com
+                        </a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
