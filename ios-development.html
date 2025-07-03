@@ -9,11 +9,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Add Technoid font declaration */
+        @font-face {
+            font-family: 'Technoid';
+            src: url('fonts/technoid/TECHNOID.TTF') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         /* Custom styles for the Inter font and general body styling */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #000000; /* Black background for the page */
             color: #7FDD7F; /* Slightly darker green text color */
+        }
+        
+        /* Technoid font styling for headers */
+        .technoid-header {
+            font-family: 'Technoid', 'Inter', sans-serif !important;
+            font-weight: normal !important;
         }
         /* Ensure the main content area has some padding */
         main {

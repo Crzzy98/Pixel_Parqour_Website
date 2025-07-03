@@ -9,11 +9,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Add Technoid font declaration */
+        @font-face {
+            font-family: 'Technoid';
+            src: url('fonts/technoid/TECHNOID.TTF') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         /* Custom styles for the Inter font and general body styling */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #000000; /* Black background for the page */
             color: #7FDD7F; /* Slightly darker green text color */
+        }
+        
+        /* Technoid font styling for headers */
+        .technoid-header {
+            font-family: 'Technoid', 'Inter', sans-serif !important;
+            font-weight: normal !important;
         }
         /* Ensure the main content area has some padding */
         main {
@@ -99,7 +114,7 @@
         </div>
 
         <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
-            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 text-center border-b-2 border-green-400 pb-4 responsive-text-3xl">Web Solutions</h1>            <!-- Header Hero Image -->
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 text-center border-b-2 border-green-400 pb-4 responsive-text-3xl technoid-header">Web Solutions</h1>            <!-- Header Hero Image -->
             <div class="hero-image-container">
                 <img src="images/web_info.jpg" alt="Web Solutions - Professional Web Development Services" class="hero-image">
                 <p class="text-xs text-gray-400 mt-2 text-center">
@@ -110,7 +125,7 @@
             <!-- Detailed Text Section -->
             <div class="text-content space-y-6">
                 <div class="prose prose-lg max-w-none">
-                    <h2 class="text-2xl font-semibold text-gray-800 mb-4 responsive-text-2xl">Comprehensive Web Development Services</h2>
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4 responsive-text-2xl technoid-header">Comprehensive Web Development Services</h2>
                     <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg">
                         At Pixel Parkour, we specialize in creating dynamic, responsive, and high-performance web applications that drive business growth and enhance user engagement. Our web solutions are crafted with modern technologies and best practices to ensure your digital presence stands out in today's competitive landscape.
                     </p>

@@ -9,11 +9,48 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Add Megatech font declaration for header text */
+        @font-face {
+            font-family: 'Megatech';
+            src: url('fonts/megatech/Megatech.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
         /* Custom styles for the Inter font and general body styling */
         body {
             font-family: 'Inter', sans-serif;
             background-color: #000000; /* Black background for the page */
             color: #7FDD7F; /* Slightly darker green text color */
+        }
+        
+        /* Megatech font styling for logo header text only */
+        .header-text {
+            font-family: 'Megatech', 'Inter', sans-serif !important;
+            font-weight: normal !important;
+        }
+        /* Keep original font for page content headers */
+        .technoid-header {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: bold !important;
+        }
+        /* Double base text sizes */
+        p, li {
+            font-size: 2rem !important;
+            line-height: 1.6 !important;
+        }
+        .text-lg {
+            font-size: 2.25rem !important;
+        }
+        .text-xl {
+            font-size: 2.5rem !important;
+        }
+        .text-2xl {
+            font-size: 3rem !important;
+        }
+        .text-3xl {
+            font-size: 3.75rem !important;
         }
         /* Ensure the main content area has some padding */
         main {
@@ -42,7 +79,22 @@
         }
         .text-white {
             color: #7FDD7F !important; /* Slightly darker green for footer text */
-        }        /* Hero image container and styling */
+        }
+        /* Header responsive layout */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            header > div {
+                margin: 0.5rem 0 !important;
+            }
+            header img {
+                max-width: 80vw !important;
+                height: 300px !important;
+            }
+        }
+        /* Hero image container and styling */
         .hero-image-container {
             width: 100%;
             margin: 2rem 0;
@@ -57,18 +109,18 @@
             display: block;
             border-radius: 8px;
         }
-        /* Responsive text scaling */
+        /* Responsive text scaling - doubled sizes */
         .responsive-text-lg {
-            font-size: clamp(1.125rem, 2vw, 2rem) !important;
+            font-size: clamp(2.25rem, 4vw, 4rem) !important;
         }
         .responsive-text-xl {
-            font-size: clamp(1.25rem, 2.5vw, 2.5rem) !important;
+            font-size: clamp(2.5rem, 5vw, 5rem) !important;
         }
         .responsive-text-2xl {
-            font-size: clamp(1.5rem, 3vw, 3rem) !important;
+            font-size: clamp(3rem, 6vw, 6rem) !important;
         }
         .responsive-text-3xl {
-            font-size: clamp(1.875rem, 4vw, 4rem) !important;
+            font-size: clamp(3.75rem, 8vw, 8rem) !important;
         }
         /* Back button styling */
         .back-button {
@@ -89,9 +141,21 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-    <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap">
-        <img src="images/pixel_logo.png" alt="Pixel Parkour Logo" class="w-auto object-contain" style="height: 432px; max-width: 90vw;">
-    </header>
+    <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
+                Crafting Software<br>Developing Dreams
+            </h1>
+        </div>
+        <div class="flex-shrink-0 mx-4">
+            <img src="images/pixel_logo.png" alt="Pixel Parkour Logo" class="w-auto object-contain" style="height: 432px; max-width: 50vw;">
+        </div>
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
+                Business and Personal<br>Software Solutions
+            </h1>
+        </div>
+</header>
 
     <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow" style="width: 95vw; min-width: 95vw;">
         <div class="mb-6">
@@ -99,7 +163,7 @@
         </div>
 
         <section class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
-            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 text-center border-b-2 border-green-400 pb-4 responsive-text-3xl">Android App Development</h1>            <!-- Header Hero Image -->
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-6 text-center border-b-2 border-green-400 pb-4 responsive-text-3xl technoid-header">Android App Development</h1>            <!-- Header Hero Image -->
             <div class="hero-image-container">
                 <img src="images/android_info.jpg" alt="Android App Development - Professional Android Application Development" class="hero-image">
                 <p class="text-xs text-gray-400 mt-2 text-center">
