@@ -3,16 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Pixel Parkour - Android App Development - Professional Android application development services for the vast Android ecosystem.">
+    <meta name="de        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
+                Business and Personal<br>Software Solutions
+            </h1>
+        </div>tion" content="Pixel Parkour - Android App Development - Professional Android application development services for the vast Android ecosystem.">
     <meta name="robots" content="index, follow">
     <title>Android App Development - Pixel Parkour</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Add Megatech font declaration for header text */
+        /* Add TechnoBoard font declaration for header text */
         @font-face {
-            font-family: 'Megatech';
-            src: url('fonts/megatech/Megatech.ttf') format('truetype');
+            font-family: 'TechnoBoard';
+            src: url('fonts/techno_board/TechnoBoard.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        /* Add Technoid font declaration */
+        @font-face {
+            font-family: 'Technoid';
+            src: url('fonts/technoid/TECHNOID.TTF') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: swap;
@@ -25,15 +38,18 @@
             color: #7FDD7F; /* Slightly darker green text color */
         }
         
-        /* Megatech font styling for logo header text only */
+        /* TechnoBoard font styling for logo header text with distinctive styling */
         .header-text {
-            font-family: 'Megatech', 'Inter', sans-serif !important;
-            font-weight: normal !important;
-        }
-        /* Keep original font for page content headers */
-        .technoid-header {
-            font-family: 'Inter', sans-serif !important;
+            font-family: 'TechnoBoard', 'Inter', sans-serif !important;
             font-weight: bold !important;
+            text-transform: uppercase !important;
+            letter-spacing: 2px !important;
+            font-size: 3em !important;
+        }
+        /* Technoid font styling for page content headers */
+        .technoid-header {
+            font-family: 'Technoid', 'Inter', sans-serif !important;
+            font-weight: normal !important;
         }
         /* Double base text sizes */
         p, li {
@@ -90,8 +106,8 @@
                 margin: 0.5rem 0 !important;
             }
             header img {
-                max-width: 80vw !important;
-                height: 300px !important;
+                max-width: 60vw !important;
+                height: 225px !important;
             }
         }
         /* Hero image container and styling */
@@ -142,6 +158,7 @@
 </head>
 <body class="min-h-screen flex flex-col">
     <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
+        <!-- Desktop Header -->
         <div class="flex-1 text-center">
             <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
                 Crafting Software<br>Developing Dreams
@@ -152,7 +169,7 @@
         </div>
         <div class="flex-1 text-center">
             <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
-                Business and Personal<br>Software Solutions
+                Business and Personal Software Solutions
             </h1>
         </div>
 </header>

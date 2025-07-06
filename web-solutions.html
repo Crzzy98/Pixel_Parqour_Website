@@ -9,6 +9,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Add TechnoBoard font declaration for header text */
+        @font-face {
+            font-family: 'TechnoBoard';
+            src: url('fonts/techno_board/TechnoBoard.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
         /* Add Technoid font declaration */
         @font-face {
             font-family: 'Technoid';
@@ -29,6 +38,14 @@
         .technoid-header {
             font-family: 'Technoid', 'Inter', sans-serif !important;
             font-weight: normal !important;
+        }
+        /* TechnoBoard font styling for logo header text with distinctive styling */
+        .header-text {
+            font-family: 'TechnoBoard', 'Inter', sans-serif !important;
+            font-weight: bold !important;
+            text-transform: uppercase !important;
+            letter-spacing: 2px !important;
+            font-size: 3em !important;
         }
         /* Ensure the main content area has some padding */
         main {
@@ -85,6 +102,20 @@
         .responsive-text-3xl {
             font-size: clamp(1.875rem, 4vw, 4rem) !important;
         }
+        /* Header responsive layout */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column !important;
+                text-align: center !important;
+            }
+            header > div {
+                margin: 0.5rem 0 !important;
+            }
+            header img {
+                max-width: 80vw !important;
+                height: 300px !important;
+            }
+        }
         /* Back button styling */
         .back-button {
             background-color: #7FDD7F;
@@ -104,8 +135,20 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
-    <header class="bg-white shadow-md py-4 flex items-center justify-center flex-wrap">
-        <img src="images/pixel_logo.png" alt="Pixel Parkour Logo" class="w-auto object-contain" style="height: 432px; max-width: 90vw;">
+    <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
+                Crafting Software<br>Developing Dreams
+            </h1>
+        </div>
+        <div class="flex-shrink-0 mx-4">
+            <img src="images/pixel_logo.png" alt="Pixel Parkour Logo" class="w-auto object-contain" style="height: 432px; max-width: 50vw;">
+        </div>
+        <div class="flex-1 text-center">
+            <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
+                Business and Personal<br>Software Solutions
+            </h1>
+        </div>
     </header>
 
     <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow" style="width: 95vw; min-width: 95vw;">

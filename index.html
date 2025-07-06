@@ -45,7 +45,7 @@
             font-weight: bold !important;
             text-transform: uppercase !important;
             letter-spacing: 2px !important;
-            font-size: 1.5em !important;
+            font-size: 3em !important;
         }
         /* Ensure the main content area has some padding */
         main {
@@ -163,9 +163,94 @@
                 order: 2;
             }
         }
+        /* Navigation styles */
+        .navbar {
+            display: none;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 10px;
+        }
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: #7FDD7F;
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            right: 0;
+            background-color: #1a1a1a;
+            overflow-x: hidden;
+            transition: 0.3s;
+            padding-top: 60px;
+        }
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #7FDD7F;
+            display: block;
+            transition: 0.3s;
+        }
+        .sidenav a:hover {
+            color: #6BC26B;
+        }
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        @media (max-width: 768px) {
+            .navbar {
+                display: flex !important;
+                justify-content: space-between !important;
+                align-items: center !important;
+                padding: 0 20px !important;
+                background-color: #1a1a1a !important;
+            }
+            .hamburger {
+                display: flex !important;
+            }
+            .header-text {
+                display: none !important;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
+    <!-- Mobile Navigation -->
+    <nav class="navbar">
+        <div class="flex items-center">
+            <img src="images/pixel_logo.png" alt="Pixel Parkour Logo" class="w-auto object-contain" style="height: 60px;">
+        </div>
+        <div class="hamburger" onclick="openNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Side Navigation -->
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#about-us" onclick="closeNav()">About Us</a>
+        <a href="#crafting-dreams" onclick="closeNav()">Our Services</a>
+        <a href="#contact-us" onclick="closeNav()">Contact</a>
+        <a href="web-solutions.html" onclick="closeNav()">Web Solutions</a>
+        <a href="ios-development.html" onclick="closeNav()">iOS Development</a>
+        <a href="android-development.html" onclick="closeNav()">Android Development</a>
+    </div>
+
     <header class="bg-white shadow-md py-4 flex items-center justify-between flex-wrap px-4">
         <div class="flex-1 text-center">
             <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
@@ -177,7 +262,7 @@
         </div>
         <div class="flex-1 text-center">
             <h1 class="text-lg sm:text-xl lg:text-2xl font-bold text-gray-800 header-text">
-                Business and Personal Software Solutions
+                Business and Personal<br>Software Solutions
             </h1>
         </div>
 </header>
@@ -284,5 +369,23 @@
     <footer class="bg-gray-800 text-white p-4 text-center mt-8">
         <p>&copy; 2025 Pixel Parkour LLC. All rights reserved.</p>
     </footer>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        // Close sidenav when clicking outside
+        window.onclick = function(event) {
+            var sidenav = document.getElementById("mySidenav");
+            if (event.target == sidenav) {
+                closeNav();
+            }
+        }
+    </script>
 </body>
 </html>
