@@ -258,6 +258,26 @@
                 display: none !important;
             }
         }
+        
+        /* Legal footer styling */
+        .legal-footer {
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 1px solid #333;
+            margin-top: 2rem;
+            background-color: #1a1a1a;
+        }
+        .legal-footer a {
+            color: #7FDD7F;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .legal-footer a:hover {
+            color: #6BC26B;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -409,6 +429,10 @@
 
     <footer class="bg-gray-800 text-white p-4 text-center mt-8">
         <p>&copy; 2025 Pixel Parkour LLC. All rights reserved.</p>
+        <div class="legal-footer">
+            <a href="terms-of-service.html">Legal</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
     </footer>
 
     <script>
