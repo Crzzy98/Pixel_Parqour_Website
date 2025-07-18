@@ -275,6 +275,26 @@
                 display: none !important;
             }
         }
+        
+        /* Legal footer styling */
+        .legal-footer {
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 1px solid #333;
+            margin-top: 2rem;
+            background-color: #1a1a1a;
+        }
+        .legal-footer a {
+            color: #7FDD7F;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        .legal-footer a:hover {
+            color: #6BC26B;
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col">
@@ -330,16 +350,15 @@
 
     <main class="mx-auto mt-8 p-4 bg-white rounded-lg shadow-lg flex-grow text-center" style="width: 95vw; min-width: 95vw;">
         <section id="about-us" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 md:mb-6 lg:mb-8 xl:mb-10 responsive-text-3xl karnivore-header">About Us</h2>
-            <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg mb-6 md:mb-8 lg:mb-10 xl:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 md:mb-6 lg:mb-8 xl:mb-10 border-b-2 border-green-400 pb-2 responsive-text-3xl karnivore-header">About Us</h2>
+            <p class="text-lg leading-relaxed text-gray-700 responsive-text-lg mb-4 md:mb-6 lg:mb-8 xl:mb-10">
                 At Pixel Parkour, our main goal is to bring cutting-edge software solutions to the masses, easing the burden of developing mobile and web applications for individuals and companies alike as we move into the next stage of the technical era. We are a team of highly skilled programmers with diverse backgrounds, dedicated to helping you bring your projects to fruition. We specialize in utilizing the best AI tools and software on the market and will create tailored project plans to suit your unique needs.
             </p>
-            <hr class="border-t-2 border-green-400 mb-12 mt-8">
         </section>
 
 
         <section id="crafting-dreams" class="mb-10 p-6 bg-gray-50 rounded-lg shadow-sm section-content">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 md:mb-6 lg:mb-8 xl:mb-10 responsive-text-3xl karnivore-header">Develop Your Dreams</h2>
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 md:mb-6 lg:mb-8 xl:mb-10 border-b-2 border-green-400 pb-2 responsive-text-3xl karnivore-header">Develop Your Dreams</h2>
             <p class="text-lg leading-relaxed text-gray-700 mb-6 md:mb-8 lg:mb-10 xl:mb-12 responsive-text-lg">
                 At Pixel Parkour, we transform your visions into robust, user-friendly digital experiences. Our expertise spans across various platforms, ensuring your project meets the highest standards of quality and innovation.
             </p>
@@ -395,11 +414,10 @@
         </section>
 
         <section id="contact-us" class="p-6 bg-gray-50 rounded-lg shadow-sm">
-            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 karnivore-header">Get in Touch</h2>
-            <p class="text-lg leading-relaxed text-gray-700 mb-6 md:mb-8 lg:mb-10 xl:mb-12">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 border-b-2 border-green-400 pb-2 karnivore-header">Get in Touch</h2>
+            <p class="text-lg leading-relaxed text-gray-700 mb-4">
                 We'd love to hear from you! Reach out to discuss your software needs and schedule a consultation.
             </p>
-            <hr class="border-t-2 border-green-400 mb-12 mt-8">
 
             <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
                 <p class="text-base text-blue-800 mb-2">
@@ -431,6 +449,10 @@
 
     <footer class="bg-gray-800 text-white p-4 text-center mt-8">
         <p>&copy; 2025 Pixel Parkour LLC. All rights reserved.</p>
+        <div class="legal-footer">
+            <a href="terms-of-service.html">Legal</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+        </div>
     </footer>
 
     <script>
