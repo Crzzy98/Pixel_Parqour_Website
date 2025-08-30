@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+        /* Increase line height for modal header */
+        #quickStartModal h3.text-3xl {
+            line-height: 3.5rem;
+        }
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TNGRLSS5SE"></script>
     <script>
@@ -175,7 +179,7 @@
                     <strong>How to Get Started:</strong>
                 </p>
                 <p class="text-base text-blue-800 mb-2">
-                    Please send us a short description of your project idea, and one of our consultants will be in contact with you within 5 business days to discuss your project and begin drafting a project plan.
+                    Please send us a short description of your project idea. An email will be sent to our team, and one of our consultants will review your requirements and reach out to you in 1-2 business days with the next steps.
                 </p>
                 <p class="text-base text-blue-800">
                     We specialize in creating plans to fit any person or business's financial and digital needs.
@@ -210,7 +214,7 @@
             <hr class="border-t-2 border-green-400 mx-auto" style="width: 95%;">
         </div>
         <p class="text-lg leading-relaxed text-gray-700 mb-4 text-center">
-            Try one of our quick start options to get your project off the ground in a flash! A consultant will be in contact with you in 2-3 business days.
+            Try one of our quick start options to get your project off the ground in a flash! A consultant will be in contact with you in 1-2 business days.
         </p>
         <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6">
             <p class="text-base text-blue-800 mb-2 text-center">
@@ -224,7 +228,7 @@
 
     <!-- Quick Start Modal -->
     <div id="quickStartModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-    <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl lg:max-w-[80vw] lg:w-[80vw] p-8 relative">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl lg:max-w-[85vw] lg:w-[85vw] p-8 relative">
             <button id="closeQuickStartModal" class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
                 <h3 class="text-3xl font-bold mb-6 text-center" style="color: #FFD700; font-size: 3rem;">Quick Start Tiers</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -236,7 +240,78 @@
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Single-page website or landing page</li>
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>HTML5, CSS3, JavaScript (ES6+)</li>
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Responsive design, contact form, basic SEO</li>
-                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Hosting setup on AWS S3 or Netlify</li>
+                            <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Hosting setup on AWS S3 or Azure</li>
+            <style>
+            /* Improved modal tier box layout: white containers stretch, price stays above button, no overlap */
+            #quickStartModal .grid {
+                align-items: stretch;
+            }
+            #quickStartModal .border.rounded-lg.p-4 {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                height: 100%;
+                min-height: 480px;
+            }
+            #quickStartModal .bg-green-50 {
+                flex: 1 1 auto;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                min-height: 320px;
+            }
+                #quickStartModal .font-bold.text-green-700.text-2xl {
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
+                    min-height: 2.5rem;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    background: #fff;
+                    z-index: 2;
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    line-height: 3.2rem;
+                }
+            #quickStartModal .learnMoreBtn {
+                margin-top: 2rem !important;
+            }
+            @media (max-width: 900px) {
+                #quickStartModal .grid {
+                    grid-template-columns: 1fr !important;
+                }
+                #quickStartModal .border.rounded-lg.p-4 {
+                    min-height: 0 !important;
+                }
+                #quickStartModal .bg-green-50 {
+                    min-height: 0 !important;
+                }
+            }
+            @media (max-width: 600px) {
+                #quickStartModal .border.rounded-lg.p-4 {
+                    min-height: 0 !important;
+                    padding: 1rem !important;
+                }
+                #quickStartModal .bg-green-50 {
+                    min-height: 0 !important;
+                    padding: 1rem !important;
+                }
+                #quickStartModal ul.text-blue-800 {
+                    min-height: 0 !important;
+                    font-size: 1rem !important;
+                }
+                        #quickStartModal .font-bold.text-green-700.text-2xl {
+                            margin-top: 1rem !important;
+                            margin-bottom: 1rem !important;
+                            font-size: 1.25rem !important;
+                            min-height: 1.5rem !important;
+                    line-height: 2.7rem !important;
+                        }
+                #quickStartModal .learnMoreBtn {
+                    margin-top: 1rem !important;
+                }
+            }
+            </style>
                         </ul>
                         <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Starting Price: $299</div>
                     </div>
