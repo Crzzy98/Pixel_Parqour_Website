@@ -27,8 +27,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body class="min-h-screen flex flex-col"> <!-- Custom Cursor -->
-    <div class="custom-cursor" id="customCursor"></div> <!-- Mobile Navigation -->
+<body class="min-h-screen flex flex-col"> 
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div> 
+    
+    <!-- Pixel Chat Square -->
+    <div id="pixelChatContainer" class="pixel-chat-container">
+        <!-- Chat Icon (will be created by Botpress, this is for hover detection) -->
+        <div id="chatIconHover" class="chat-icon-hover-zone"></div>
+        
+        <!-- Pixel Chat Square Image -->
+        <div id="pixelChatSquare" class="pixel-chat-square"></div>
+    </div>
+    
+    <!-- Mobile Navigation -->
     <script>
     // Custom Cursor Logic
     document.addEventListener('mousemove', function(e) {
@@ -211,7 +223,7 @@
             <style>
                 /* Pixel Guy Running Animation Styles */
                 .pixel-guy-container {
-                    width: 96px;
+                    width: 120px;
                     height: 96px;
                     display: flex;
                     align-items: center;
@@ -274,7 +286,7 @@
                     display: flex !important;
                     align-items: center !important;
                     justify-content: center !important;
-                    gap: 1rem !important;
+                    gap: 3rem !important;
                 }
             </style>
             <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 karnivore-header text-center flex items-center justify-center gap-4"
@@ -388,11 +400,13 @@
             <div class="bg-white rounded-lg shadow-xl w-full max-w-2xl lg:max-w-[85vw] lg:w-[85vw] p-8 relative"
                 style="max-height: 90vh; overflow-y: auto;"> <button id="closeQuickStartModal"
                     class="absolute top-2 right-2 text-gray-500 hover:text-gray-800 text-2xl">&times;</button>
-                <h3 class="text-3xl font-bold mb-12 text-center" style="color: #FFD700; font-size: 3rem;">Quick Start
-                    Tiers</h3>
+                <h3 class="text-3xl font-bold mb-8 text-center" style="color: #FFD700; font-size: 3rem;">Quick Start
+                    Packages</h3>
+                <p class="text-center text-gray-600 mb-8 italic">"Dev needs to work with any budget and any team"</p>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6"> <!-- Basic Tier -->
                     <div class="border rounded-lg p-4 flex flex-col items-center h-full" style="min-height: 560px;">
-                        <h4 class="font-bold text-green-600 mb-4" style="font-size:3.75rem;">Basic</h4>
+                        <h4 class="font-bold text-green-600 mb-2 karnivore-header" style="font-size:1.875rem;">Starter</h4>
+                        <p class="text-sm text-gray-600 text-center italic mb-4">Perfect for entrepreneurs & personal projects</p>
                         <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4 w-full flex-1 flex flex-col"
                             style="min-height: 680px;">
                             <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
@@ -471,14 +485,15 @@
             }
             </style>
                         </ul>
-                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Typically starting at: <span style="border: 2px solid #22c55e; border-radius: 0.5rem; padding: 0.25em 0.75em; background: #f0fdf4; color: #15803d; font-weight: bold;">$299</span></div>
+                        <div class="font-bold text-green-700 text-lg mt-4 mb-4 text-center">Get your business online fast<br><br><span style="border: 2px solid #22c55e; border-radius: 0.5rem; padding: 0.25em 0.75em; background: #f0fdf4; color: #15803d; font-weight: bold; font-size: 1rem;">Typically starting at $1,500</span><br><small class="text-xs text-gray-500 mt-2 block">Includes setup + 3 months hosting</small></div>
                     </div>
                     <div class="flex-grow"></div>
-                    <button class="learnMoreBtn px-8 py-6 text-2xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="basic">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-8 w-8 ml-2" /></button>
+                    <button class="learnMoreBtn px-8 py-6 text-xl bg-green-600 text-white border-2 border-green-600 rounded hover:bg-green-700 hover:text-white hover:border-green-700 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="starter">Schedule Consultation <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-6 w-6 ml-2" /></button>
                 </div>
-                <!-- Standard Tier -->
+                <!-- Growth Tier -->
                 <div class="border rounded-lg p-4 flex flex-col items-center h-full" style="min-height: 560px;">
-                    <h4 class="font-bold text-green-600 mb-4" style="font-size:3.75rem;">Standard</h4>
+                    <h4 class="font-bold text-green-600 mb-4 karnivore-header" style="font-size:1.875rem;">Growth</h4>
+                    <p class="text-lg text-gray-600 mb-4 text-center">For businesses ready to scale & increase revenue</p>
                     <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-8 w-full flex-1 flex flex-col" style="min-height: 680px;">
                         <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Multi-page web app or business site</li>
@@ -487,14 +502,15 @@
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Deployment on AWS or Azure</li>
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>User authentication and dashboard</li>
                         </ul>
-                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Typically starting at: <span style="border: 2px solid #22c55e; border-radius: 0.5rem; padding: 0.25em 0.75em; background: #f0fdf4; color: #15803d; font-weight: bold;">$999</span></div>
+                        <div class="font-bold text-green-700 text-lg mt-4 mb-4 text-center">Scale your business operations<br><br><span style="border: 2px solid #22c55e; border-radius: 0.5rem; padding: 0.25em 0.75em; background: #f0fdf4; color: #15803d; font-weight: bold; font-size: 1rem;">Typically starting at $3,500</span><br><small class="text-xs text-gray-500 mt-2 block">Includes setup + 6 months hosting</small></div>
                     </div>
                     <div class="flex-grow"></div>
-                    <button class="learnMoreBtn px-8 py-6 text-2xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="standard">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-8 w-8 ml-2" /></button>
+                    <button class="learnMoreBtn px-8 py-6 text-xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="growth">Schedule Consultation <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-6 w-6 ml-2" /></button>
                 </div>
-                <!-- Premium Tier -->
+                <!-- Enterprise Tier -->
                 <div class="border rounded-lg p-4 flex flex-col items-center h-full" style="min-height: 560px;">
-                    <h4 class="font-bold text-green-600 mb-4" style="font-size:3.75rem;">Premium</h4>
+                    <h4 class="font-bold text-green-600 mb-4 karnivore-header" style="font-size:1.875rem;">Enterprise</h4>
+                    <p class="text-lg text-gray-600 mb-4 text-center">For companies needing comprehensive digital transformation</p>
                     <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-4 w-full flex-1 flex flex-col" style="min-height: 680px;">
                         <ul class="text-blue-800 text-left text-xl space-y-2" style="min-height: 480px;">
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Full-stack solution: mobile & web</li>
@@ -502,10 +518,10 @@
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Dockerized microservices, CI/CD, analytics, cloud scaling (AWS/Azure)</li>
                             <li class="flex items-start"><span class="text-green-500 mr-2 mt-1">&#10003;</span>Consulting, testing, 3 months support</li>
                         </ul>
-                        <div class="font-bold text-green-700 text-2xl mt-8 mb-8">Typically starting at: <span style="border: 2px solid #22c55e; border-radius: 0.5rem; padding: 0.25em 0.75em; background: #f0fdf4; color: #15803d; font-weight: bold;">$2499</span></div>
+                        <div class="font-bold text-green-700 text-lg mt-4 mb-4 text-center">Transform your entire business digitally<br><br><span style="border: 2px solid #22c55e; border-radius: 0.5rem; padding: 0.25em 0.75em; background: #f0fdf4; color: #15803d; font-weight: bold; font-size: 1rem;">Typically starting at $7,500</span><br><small class="text-xs text-gray-500 mt-2 block">Includes setup + 1 year hosting & support</small></div>
                     </div>
                     <div class="flex-grow"></div>
-                    <button class="learnMoreBtn px-8 py-6 text-2xl bg-blue-700 text-white border-2 border-blue-700 rounded hover:bg-blue-800 hover:text-white hover:border-blue-900 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="premium">Learn More <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-8 w-8 ml-2" /></button>
+                    <button class="learnMoreBtn px-8 py-6 text-xl bg-purple-700 text-white border-2 border-purple-700 rounded hover:bg-purple-800 hover:text-white hover:border-purple-800 transition mt-auto w-full flex items-center justify-center gap-3" style="height: 72px; min-width: 220px;" data-tier="enterprise">Schedule Consultation <img src="images/icons/speech-bubble.png" alt="Speech Bubble" class="inline-block align-middle h-6 w-6 ml-2" /></button>
                 </div>
             </div>
         </div>
@@ -662,6 +678,92 @@
             
             document.addEventListener('mouseenter', function() {
                 cursor.style.display = 'block';
+            });
+            
+            // Pixel Chat Square Functionality
+            const chatContainer = document.getElementById('pixelChatContainer');
+            const chatSquare = document.getElementById('pixelChatSquare');
+            const chatHoverZone = document.getElementById('chatIconHover');
+            const closeChatBtn = document.getElementById('closeChatSquare');
+            let isSquareVisible = false;
+            
+            // Function to show chat square
+            function showChatSquare() {
+                if (!isSquareVisible) {
+                    chatSquare.classList.add('show');
+                    isSquareVisible = true;
+                }
+            }
+            
+            // Function to hide chat square
+            function hideChatSquare() {
+                if (isSquareVisible) {
+                    chatSquare.classList.remove('show');
+                    isSquareVisible = false;
+                }
+            }
+            
+            // Wait for Botpress to load and position hover zone over chat icon
+            function positionHoverZone() {
+                const bpChatIcon = document.querySelector('#bp-web-widget-icon, [data-testid="widget-icon"], .bpw-floating-button, .bp-widget-icon, iframe[src*="botpress"]');
+                if (bpChatIcon) {
+                    const rect = bpChatIcon.getBoundingClientRect();
+                    chatHoverZone.style.width = (rect.width * 1.3) + 'px';
+                    chatHoverZone.style.height = (rect.height * 1.3) + 'px';
+                    chatHoverZone.style.bottom = '15px';
+                    chatHoverZone.style.right = '15px';
+                    console.log('Chat icon found and hover zone positioned', rect);
+                } else {
+                    // Fallback positioning if chat icon not found
+                    console.log('Chat icon not found, using fallback positioning');
+                    chatHoverZone.style.width = '60px';
+                    chatHoverZone.style.height = '60px';
+                    chatHoverZone.style.bottom = '20px';
+                    chatHoverZone.style.right = '20px';
+                    setTimeout(positionHoverZone, 1000);
+                }
+            }
+            
+            // Initialize hover zone positioning with multiple attempts
+            setTimeout(positionHoverZone, 1000);
+            setTimeout(positionHoverZone, 3000);
+            setTimeout(positionHoverZone, 5000);
+            
+            // Hover events for chat square
+            if (chatHoverZone) {
+                chatHoverZone.addEventListener('mouseenter', function() {
+                    showChatSquare();
+                });
+                
+                chatHoverZone.addEventListener('click', function() {
+                    if (isSquareVisible) {
+                        hideChatSquare();
+                    } else {
+                        showChatSquare();
+                    }
+                });
+            }
+            
+            // Click outside to close chat square
+            document.addEventListener('click', function(e) {
+                if (isSquareVisible && 
+                    !chatContainer.contains(e.target) && 
+                    !chatHoverZone.contains(e.target)) {
+                    hideChatSquare();
+                }
+            });
+            
+            // Close button functionality
+            if (closeChatBtn) {
+                closeChatBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    hideChatSquare();
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                setTimeout(positionHoverZone, 100);
             });
         });
     </script>
