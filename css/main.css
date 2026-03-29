@@ -861,6 +861,10 @@ main {
     color: var(--primary-green) !important;
 }
 
+.text-gray-300 {
+    color: var(--text-contrast) !important;
+}
+
 .bg-gray-800 {
     background-color: var(--footer-bg) !important;
 }
