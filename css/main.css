@@ -300,24 +300,6 @@
 }
 
 /* ============================================
-   CSS CUSTOM PROPERTIES FOR RESPONSIVE DESIGN
-   ============================================ */
-
-:root {
-    --navbar-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --logo-transition: all 0.3s ease;
-    --hover-transform: scale(1.15);
-    --navbar-bg: #222;
-    --navbar-color: #7FDD7F;
-    --navbar-hover-bg: #7FDD7F;
-    --navbar-hover-color: #111;
-}
-
-/* ============================================
-   SMOOTH TRANSITIONS FOR ALL ELEMENTS
-   ============================================ */
-
-/* ============================================
    BASE NAVBAR STYLING WITH SMOOTH TRANSITIONS
    ============================================ */
 
@@ -332,6 +314,24 @@
     display: inline-block;
     text-decoration: none;
     /* Base font-size and padding removed - handled by responsive media queries */
+}
+
+/* Keep desktop nav buttons the same height when labels wrap at narrow widths */
+.desktop-navbar nav {
+    align-items: stretch;
+}
+
+.desktop-navbar nav a {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    min-height: 4.1em;
+    line-height: 1.15;
+    text-align: center;
+    white-space: normal;
+    box-sizing: border-box;
+    padding-top: 0.55em !important;
+    padding-bottom: 0.55em !important;
 }
 
 .desktop-navbar nav a:hover,
@@ -929,25 +929,6 @@ main {
     transition: all 0.3s ease;
 }
 
-/* Healthy Vision CTA Button (brighter + larger hover) */
-.healthy-vision-cta {
-    background-color: #34D399 !important;
-    /* brighter green */
-    color: #000 !important;
-    font-weight: 700 !important;
-    padding: 0.75rem 1.25rem !important;
-    border-radius: 0.75rem !important;
-    transition: transform 0.22s cubic-bezier(.2, .9, .2, 1), box-shadow 0.22s ease, background-color 0.18s ease !important;
-}
-
-.healthy-vision-cta:hover {
-    transform: scale(1.12) !important;
-    /* larger on hover */
-    background-color: #10B981 !important;
-    /* slightly deeper green on hover */
-    box-shadow: 0 12px 30px rgba(16, 185, 129, 0.18) !important;
-}
-
 .back-button:hover {
     background-color: var(--secondary-green);
     transform: translateY(-2px) scale(1.5);
@@ -990,32 +971,11 @@ main {
     display: none;
     border-radius: 0.5em;
     font-size: 1em !important;
-    padding: 1em 2em !important;
-    margin-right: 0.5em !important;
-
-    header {
-        margin-bottom: 2rem;
-    }
-
-    .desktop-navbar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: var(--card-bg);
-        padding: 1.5rem 0;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        margin-top: 1rem;
-    }
-
-    /* Removed conflicting navbar styles - handled by responsive media queries above */
-    .navbar {
-        width: 85vw !important;
-        max-width: 85vw !important;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        position: static !important;
-    }
-
+    width: 85vw !important;
+    max-width: 85vw !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    position: static !important;
     text-decoration: none;
     font-weight: 600;
     font-size: 1.6rem;
@@ -1024,6 +984,20 @@ main {
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.navbar header {
+    margin-bottom: 2rem;
+}
+
+.navbar .desktop-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--card-bg);
+    padding: 1.5rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 1rem;
 }
 
 .desktop-navbar a:hover {
