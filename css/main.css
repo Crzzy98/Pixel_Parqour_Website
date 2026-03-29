@@ -463,6 +463,7 @@ header img[alt*="Logo"] {
   --card-bg: #ffffff;
   --section-bg: #eef4ee;
   --footer-bg: #dfe8df;
+    --text-contrast: #ffffff;
 
   /* Navbar + behavior */
   --navbar-bg: var(--card-bg);
@@ -505,14 +506,11 @@ header img[alt*="Logo"] {
     --card-bg: #ffffff;
     --section-bg: #eef4ee;
     --footer-bg: #dfe8df;
+    --text-contrast: #000000;
     --navbar-bg: var(--card-bg);
     --navbar-color: var(--primary-green);
     --navbar-hover-bg: var(--primary-green);
     --navbar-hover-color: #ffffff;
-
-    .theme-toggle-btn {
-    color: #000000;
-}
 }
 
 :root[data-theme="dark"] {
@@ -522,20 +520,25 @@ header img[alt*="Logo"] {
     --card-bg: #1a1a1a;
     --section-bg: #2a2a2a;
     --footer-bg: #0a0a0a;
+    --text-contrast: #ffffff;
     --navbar-bg: #222;
     --navbar-color: #7FDD7F;
     --navbar-hover-bg: #7FDD7F;
     --navbar-hover-color: #111;
-
-    .theme-toggle-btn {
-    color: #ffffff;
-}
 }
 
 .theme-toggle-wrap {
         display: flex;
         justify-content: center;
         margin-top: 1rem;
+}
+
+:root[data-theme="light"] .theme-toggle-btn {
+    color: #000000;
+}
+
+:root[data-theme="dark"] .theme-toggle-btn {
+    color: #ffffff;
 }
 
 .theme-toggle-btn {
@@ -863,7 +866,7 @@ main {
 }
 
 .text-white {
-    color: #fff !important;
+    color: var(--text-contrast) !important;
 }
 
 /* Green Button Override for Tailwind */
@@ -1439,13 +1442,17 @@ main {
 
 .service-description {
     font-size: 1.2rem;
-    color: #ffffff;
+    color: var(--text-contrast);
     line-height: 1.7;
     margin-bottom: 1rem;
     font-weight: 500;
     max-width: 100%;
     text-align: center;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.service-slide-description {
+    color: var(--text-contrast) !important;
 }
 
 /* Initial animation states - start off screen */

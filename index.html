@@ -30,6 +30,7 @@
     <link rel="preload" href="images/cursor/cursor_with_nodes_1_SQUARE_GREEN.png" as="image">
     <!-- External Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/theme.js" defer></script>
     <!-- Site favicon (Pixel Parqour logo V1) -->
     <link rel="icon" type="image/png" href="images/icons/NEW_PP_logo_V1.png">
     <link rel="apple-touch-icon" href="images/icons/NEW_PP_logo_V1.png">
@@ -1733,62 +1734,6 @@
             }
 
             window.addEventListener('load', startAnimations);
-
-            (function () {
-                const root = document.documentElement;
-                const btn = document.getElementById('themeToggle');
-                const key = 'site-theme';
-
-                if (!btn) {
-                    return;
-                }
-
-                const savedTheme = localStorage.getItem(key);
-                if (savedTheme === 'light' || savedTheme === 'dark') {
-                    root.setAttribute('data-theme', savedTheme);
-                }
-
-                function getCurrentTheme() {
-                    const manual = root.getAttribute('data-theme');
-                    if (manual) {
-                        return manual;
-                    }
-                    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-                }
-
-                function syncThemeLogos(theme) {
-                    const mode = theme === 'light' ? 'light' : 'dark';
-                    const logos = document.querySelectorAll('img[data-dark-logo][data-light-logo]');
-                    logos.forEach(function (logo) {
-                        const darkLogo = logo.getAttribute('data-dark-logo');
-                        const lightLogo = logo.getAttribute('data-light-logo');
-                        const targetLogo = mode === 'light' ? lightLogo : darkLogo;
-
-                        if (targetLogo && logo.getAttribute('src') !== targetLogo) {
-                            logo.setAttribute('src', targetLogo);
-                        }
-                    });
-                }
-
-                function syncToggleLabel() {
-                    const current = getCurrentTheme();
-                    const next = current === 'dark' ? 'light' : 'dark';
-                    btn.textContent = 'Switch to ' + next + ' mode';
-                    btn.setAttribute('aria-pressed', String(current === 'dark'));
-
-                    syncThemeLogos(current);
-                }
-
-                btn.addEventListener('click', function () {
-                    const current = getCurrentTheme();
-                    const next = current === 'dark' ? 'light' : 'dark';
-                    root.setAttribute('data-theme', next);
-                    localStorage.setItem(key, next);
-                    syncToggleLabel();
-                });
-
-                syncToggleLabel();
-            })();
         </script>
 </body>
 
