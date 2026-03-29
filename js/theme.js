@@ -2,6 +2,8 @@
     var root = document.documentElement;
     var key = 'site-theme';
     var media = window.matchMedia('(prefers-color-scheme: dark)');
+    var defaultDarkLogo = 'images/icons/NEW_PP_logo_V1.png';
+    var defaultLightLogo = 'images/icons/New_PP_Logo_BLACK.png';
 
     function readSavedTheme() {
         try {
@@ -29,7 +31,27 @@
 
     function syncThemeLogos(theme) {
         var mode = theme === 'light' ? 'light' : 'dark';
-        var logos = document.querySelectorAll('img[data-dark-logo][data-light-logo]');
+        var explicitLogos = document.querySelectorAll('img[data-dark-logo][data-light-logo]');
+        var fallbackLogos = document.querySelectorAll(
+            'header img[src*="NEW_PP_logo_V1.png"], header img[src*="New_PP_Logo_BLACK.png"], ' +
+            'nav img[src*="NEW_PP_logo_V1.png"], nav img[src*="New_PP_Logo_BLACK.png"], ' +
+            '.logo-img[src*="NEW_PP_logo_V1.png"], .logo-img[src*="New_PP_Logo_BLACK.png"]'
+        );
+        var logos = Array.prototype.slice.call(explicitLogos);
+
+        fallbackLogos.forEach(function (logo) {
+            if (logos.indexOf(logo) === -1) {
+                logos.push(logo);
+            }
+
+            if (!logo.getAttribute('data-dark-logo')) {
+                logo.setAttribute('data-dark-logo', defaultDarkLogo);
+            }
+
+            if (!logo.getAttribute('data-light-logo')) {
+                logo.setAttribute('data-light-logo', defaultLightLogo);
+            }
+        });
 
         logos.forEach(function (logo) {
             var darkLogo = logo.getAttribute('data-dark-logo');
