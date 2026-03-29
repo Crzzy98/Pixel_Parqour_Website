@@ -499,7 +499,7 @@ header img[alt*="Logo"] {
 
 /* Manual theme selection overrides OS preference when set */
 :root[data-theme="light"] {
-    --primary-green: #2f8f47;
+    --primary-green: #000000;
     --secondary-green: #1f6f35;
     --dark-bg: #f6f8f6;
     --card-bg: #ffffff;
@@ -509,6 +509,10 @@ header img[alt*="Logo"] {
     --navbar-color: var(--primary-green);
     --navbar-hover-bg: var(--primary-green);
     --navbar-hover-color: #ffffff;
+
+    .theme-toggle-btn {
+    color: #000000;
+}
 }
 
 :root[data-theme="dark"] {
@@ -522,6 +526,10 @@ header img[alt*="Logo"] {
     --navbar-color: #7FDD7F;
     --navbar-hover-bg: #7FDD7F;
     --navbar-hover-color: #111;
+
+    .theme-toggle-btn {
+    color: #ffffff;
+}
 }
 
 .theme-toggle-wrap {
@@ -545,6 +553,7 @@ header img[alt*="Logo"] {
         transform: translateY(-1px);
         filter: brightness(1.05);
 }
+
 
 /* Base Styles */
 body {
