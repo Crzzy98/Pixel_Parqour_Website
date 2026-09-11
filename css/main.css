@@ -454,50 +454,50 @@ header img[alt*="Logo"] {
 
 /* CSS Custom Properties for General Theme Colors */
 :root {
-  color-scheme: light dark;
+    color-scheme: light dark;
 
-  /* Canonical theme tokens */
-  --primary-green: #2f8f47;
-  --secondary-green: #1f6f35;
-  --dark-bg: #f6f8f6;
-  --card-bg: #ffffff;
-  --section-bg: #eef4ee;
-  --footer-bg: #dfe8df;
+    /* Canonical theme tokens */
+    --primary-green: #2f8f47;
+    --secondary-green: #1f6f35;
+    --dark-bg: #f6f8f6;
+    --card-bg: #ffffff;
+    --section-bg: #eef4ee;
+    --footer-bg: #dfe8df;
     --text-contrast: #ffffff;
     --theme-toggle-text: #000000;
 
-  /* Navbar + behavior */
-  --navbar-bg: var(--card-bg);
-  --navbar-color: var(--primary-green);
-  --navbar-hover-bg: var(--primary-green);
-  --navbar-hover-color: #ffffff;
+    /* Navbar + behavior */
+    --navbar-bg: var(--card-bg);
+    --navbar-color: var(--primary-green);
+    --navbar-hover-bg: var(--primary-green);
+    --navbar-hover-color: #ffffff;
 
-  --navbar-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --logo-transition: all 0.3s ease;
-  --hover-transform: scale(1.15);
+    --navbar-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --logo-transition: all 0.3s ease;
+    --hover-transform: scale(1.15);
 
-  --cursor-width: 96px;
-  --cursor-height: 96px;
-  --animation-duration: 1.875s;
+    --cursor-width: 96px;
+    --cursor-height: 96px;
+    --animation-duration: 1.875s;
 }
 
 /* Browser defaults to these theme values due to 'prefers-color-scheme' */
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --primary-green: #7FDD7F;
-    --secondary-green: #6CB26B;
-    --dark-bg: #000000;
-    --card-bg: #1a1a1a;
-    --section-bg: #2a2a2a;
-    --footer-bg: #0a0a0a;
+    :root {
+        --primary-green: #7FDD7F;
+        --secondary-green: #6CB26B;
+        --dark-bg: #000000;
+        --card-bg: #1a1a1a;
+        --section-bg: #2a2a2a;
+        --footer-bg: #0a0a0a;
 
-    --navbar-bg: #222;
-    --navbar-color: #7FDD7F;
-    --navbar-hover-bg: #7FDD7F;
-    --navbar-hover-color: #111;
+        --navbar-bg: #222;
+        --navbar-color: #7FDD7F;
+        --navbar-hover-bg: #7FDD7F;
+        --navbar-hover-color: #111;
         --theme-toggle-text: #ffffff;
-  }
+    }
 }
 
 /* Manual theme selection overrides OS preference when set */
@@ -530,7 +530,7 @@ header img[alt*="Logo"] {
 }
 
 /* Light mode header treatment: black side text containers with white text */
-:root[data-theme="light"] header > .flex-1 {
+:root[data-theme="light"] header>.flex-1 {
     background-color: #000000 !important;
     padding: 0.75rem 1rem;
     border-radius: 0.5rem;
@@ -555,9 +555,9 @@ header img[alt*="Logo"] {
 }
 
 .theme-toggle-wrap {
-        display: flex;
-        justify-content: center;
-        margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
 }
 
 :root[data-theme="light"] .theme-toggle-btn {
@@ -569,19 +569,19 @@ header img[alt*="Logo"] {
 }
 
 .theme-toggle-btn {
-        background: var(--primary-green);
+    background: var(--primary-green);
     color: var(--theme-toggle-text);
-        border: 0;
-        border-radius: 0.5rem;
-        padding: 0.6rem 1rem;
-        font-weight: 700;
-        cursor: pointer;
-        transition: transform 0.2s ease, filter 0.2s ease;
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .theme-toggle-btn:hover {
-        transform: translateY(-1px);
-        filter: brightness(1.05);
+    transform: translateY(-1px);
+    filter: brightness(1.05);
 }
 
 
@@ -1168,11 +1168,31 @@ main {
 .section-content {
     text-align: center;
 }
-
+body.home-page main {
+    width: min(95vw, 1200px) !important;
+    min-width: 0 !important;
+    margin-inline: auto !important;
+    box-sizing: border-box;
+}
 body.home-page section {
+    width: min(100%, 1200px);
+    margin-inline: auto !important;
     border: 6px solid #000000 !important;
     border-radius: 1rem !important;
     box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+    body.home-page main {
+        width: calc(100vw - 2rem) !important;
+        min-width: 0 !important;
+        margin-inline: auto !important;
+    }
+
+    body.home-page main > section {
+        width: 100% !important;
+        margin-inline: auto !important;
+    }
 }
 
 .text-gray-600 {
