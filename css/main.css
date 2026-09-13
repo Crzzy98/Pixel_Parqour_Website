@@ -584,12 +584,17 @@ header img[alt*="Logo"] {
     filter: brightness(1.05);
 }
 
+html {
+    overflow-x: hidden;
+}
 
 /* Base Styles */
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--dark-bg);
     color: var(--primary-green);
+    overflow-x: hidden;
+    width: 100%;
 }
 
 /* Ensure no white backgrounds anywhere */
@@ -1168,12 +1173,14 @@ main {
 .section-content {
     text-align: center;
 }
+
 body.home-page main {
     width: min(95vw, 1200px) !important;
     min-width: 0 !important;
     margin-inline: auto !important;
     box-sizing: border-box;
 }
+
 body.home-page section {
     width: min(100%, 1200px);
     margin-inline: auto !important;
@@ -1189,7 +1196,7 @@ body.home-page section {
         margin-inline: auto !important;
     }
 
-    body.home-page main > section {
+    body.home-page main>section {
         width: 100% !important;
         margin-inline: auto !important;
     }
@@ -1209,7 +1216,7 @@ body.home-page section {
 
 /* Image accreditation text: smallest size, always consistent */
 .image-accreditation {
-    font-size: 0.65rem !important;
+    font-size: 0.325rem !important;
     color: #b0b0b0 !important;
     text-align: center;
     margin-top: 0.5rem;
@@ -1217,7 +1224,29 @@ body.home-page section {
 
 @media (max-width: 768px) {
     .image-accreditation {
-        font-size: 0.55rem !important;
+        font-size: 0.075rem !important;
+    }
+
+    /* half the doubled mobile text-base size; li/span need direct targeting to beat the bare li rule below */
+    #startup-criteria-list,
+    #startup-criteria-list li,
+    #startup-criteria-list li span {
+        font-size: 1rem !important;
+    }
+
+    /* half the doubled mobile body text for these sections, headers untouched */
+    #startup-services p,
+    #about-us p,
+    #quick-start p,
+    #surveys p,
+    #healthy-vision-section p,
+    #healthy-vision-section li,
+    #crafting-dreams p {
+        font-size: 1rem !important;
+    }
+
+    #healthy-vision-section .text-sm {
+        font-size: 0.875rem !important;
     }
 }
 
@@ -1336,6 +1365,7 @@ body.home-page section {
     .text-content,
     .image-content {
         flex: 1;
+        font-size:.1rem !important;
     }
 
     /* Web Solutions: Text left, Image right */
